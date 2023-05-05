@@ -12,14 +12,21 @@
     numberButtons[i].addEventListener("click", pushNumber);
   }
 
-  function pushOperator() {
-    alert("Operator");
-    document.querySelector.addEventListener("click", operatorButtons);
+  enterNumber();
+
+  function pushOperator(event) {
+    alert(event.target.value);
   }
+
+  const operatorButtons = document.querySelectorAll(".operator, .clear");
+  for (let i = 0; i < operatorButtons.length; i++) {
+    operatorButtons[i].addEventListener("click", pushOperator);
+  }
+
+  enterOperator();
 
   function calculate() {
     alert("Calculate");
-    document.querySelector.addEventListener("click", equalsButton);
     let total = 0;
     let value = 0;
     let calculation = [];
@@ -30,30 +37,10 @@
       for (i = 0; i < calculation.length; i++) {
         total += calculation[i];
       }
-
-    //   if (example.classList.contains('class')) {}
   }
-
-  // function enterNumber() {
-
-  // }
-
-  enterNumber();
-
-  function enterOperator() {
-    const operatorButtons = document.querySelectorAll(".operator, .clear");
-    for (let i = 0; i < operatorButtons.length; i++) {
-      operatorButtons[i].addEventListener("click", pushOperator);
-    }
-  }
-
-  enterOperator();
-
-  function startCalculation() {
-    const equalsButton = document.querySelectorAll(".equal-sign");
-    for (let i = 0; i < equalsButton.length; i++) {
-      equalsButton[i].addEventListener("click", calculate);
-    }
+  const equalsButton = document.querySelectorAll(".equal-sign");
+  for (let i = 0; i < equalsButton.length; i++) {
+    equalsButton[i].addEventListener("click", calculate);
   }
 
   startCalculation();
