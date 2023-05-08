@@ -13,6 +13,12 @@
     numberButtons[i].addEventListener("click", pushNumber);
   }
 
+  // Alternate solution to the for loop:
+
+  // numberButtons.forEach(function (button) {
+  //   button.addEventListener("click", pushNumber);
+  // });
+
   function pushOperator(event) {
     let op = event.target.value;
     if ("+-/*".includes(op)) {
